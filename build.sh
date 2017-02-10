@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files_url='https://files.resin.io' # URL exporting S3 XML
+files_url='https://files.resinstaging.io' # URL exporting S3 XML
 
 # Output arguments to stderr.
 function err()
@@ -108,6 +108,8 @@ function get_and_build()
 	tmp_path=$(mktemp --directory)
 	push $tmp_path
 
+
+
 	if ! wget "$url"; then
 		pop
 		rm -rf "$tmp_path"
@@ -132,6 +134,8 @@ function get_and_build()
 	cp -R "$module_dir"/* "$output_dir"
 
 	push "$output_dir"
+	echo $PWD
+	echo $tmp_path
 	make -C "$tmp_path" M="$PWD" modules
 	pop
 
