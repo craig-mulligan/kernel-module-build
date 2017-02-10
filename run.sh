@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mod_dir="example_module_${RESIN_DEVICE_TYPE}_${HOST_OS_VERSION}"
+mod_dir="example_module_${RESIN_DEVICE_TYPE}_${RESIN_HOST_OS_VERSION}"
 
 echo mod_dir
 
